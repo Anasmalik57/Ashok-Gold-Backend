@@ -19,6 +19,11 @@ const productSchema = new Schema(
       required: [true, "Description is required"],
       trim: true,
     },
+    productCategory: {
+      type: String,
+      required: [true, "Product category is required"],
+      trim: true,
+    },
     status: {
       type: String,
       enum: {
