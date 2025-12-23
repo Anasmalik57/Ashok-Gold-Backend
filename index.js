@@ -6,10 +6,15 @@ import categoryRoutes from "./src/routes/categoryRoutes.js";
 import productRoutes from "./src/routes/productRoutes.js";
 import bannerRoutes from "./src/routes/bannerRoutes.js";
 import enquiryRoutes from "./src/routes/enquiryRoutes.js";
+import job from "./src/config/cron.js";
 
 dotenv.config();
 
 const app = express();
+
+if (process.env.NODE_ENV === "production") {
+  job.start();
+}
 
 app.use(
   cors({
